@@ -1,0 +1,77 @@
+<!-- <div class="carousel-container">
+  <div class="slide-container">
+    <div
+      class="slide"
+      *ngFor="let slide of slides; let i = index"
+      [ngClass]="{ active: i === currentSlideIndex }"
+    >
+      <img
+        [src]="slide.slideImageUrl"
+        alt=""
+        width="10%"
+        [@slideAnimation]="transitionProperties.transitionStyle"
+      />
+    </div>
+  </div>
+
+  <div class="dot-container">
+    <span
+      class="dot"
+      *ngFor="let slide of slides; let i = index"
+      (click)="currentSlideIndex = i"
+      [ngClass]="{ active: i === currentSlideIndex }"
+      >A</span
+    >
+  </div>
+
+  <button class="prev-btn" (click)="prevSlide()">&lt;</button>
+  <button class="next-btn" (click)="nextSlide()">&gt;</button>
+</div> -->
+
+<!-- carousel -->
+<div
+  class="container--carousel"
+  role="region"
+  aria-roledescription="carousel"
+  [attr.aria-label]="carousel.description"
+  attr.width="{{ this.carousel.width }}px"
+  attr.height="{{ this.carousel.height }}px"
+>
+  <!--       *ngIf="i === currentSlideIndex" -->
+  <ul class="container--slides">
+    <ng-container *ngFor="let slide of slides; let i = index">
+      <li
+        *ngIf="i === currentSlideIndex"
+        class="container--slide"
+        [ngClass]="{ active: i === currentSlideIndex }"
+        [@slideAnimation]="this.transitionProperties.transitionStyle"
+      >
+        <img [src]="slide.slideImageUrl" />
+        {{ this.transitionProperties.transitionStyle }}+{{ i }}
+      </li>
+    </ng-container>
+  </ul>
+  <!-- controls -->
+  <div class="container__row--center--center" id="dotsContainer">
+    <button
+      *ngFor="let slide of slides; let i = index"
+      (click)="currentSlideIndex = i"
+      [ngClass]="{ active: i === currentSlideIndex }"
+    >
+      <span class="sr-only">Show slide {{ i + 1 }} of {{ slides.length }}</span>
+    </button>
+    <!-- <span
+      class="dot"
+      *ngFor="let slide of slides; let i = index"
+      (click)="currentSlideIndex = i"
+      [ngClass]="{ active: i === currentSlideIndex }"
+      >A</span
+    > -->
+  </div>
+  <button class="control prev" (click)="prevSlide()">
+    <span class="arrow left"></span>
+  </button>
+  <button class="control next" (click)="nextSlide()">
+    <span class="arrow right"></span>
+  </button>
+</div>

@@ -1,0 +1,47 @@
+<h1>Button component displays</h1>
+
+<div class="margin__top--100">
+  Button submit active:
+  <collab-comp-button
+    type="button"
+    [buttonConfig]="submitButtonConfig"
+    [isBtnDisbaled]="false"
+  ></collab-comp-button>
+</div>
+
+<div class="margin__top--200">
+  Button reset active:
+  <collab-comp-button
+    type="button"
+    [buttonConfig]="resetButtonConfig"
+    [isBtnDisbaled]="false"
+  ></collab-comp-button>
+</div>
+
+<div class="margin__top--200">
+  <collab-comp-button
+    type="link"
+    [linkConfig]="linkConfig"
+    [isBtnDisbaled]="true"
+  ></collab-comp-button>
+</div>
+
+<collab-comp-button
+  type="add"
+  [addButtonConfig]="addButtonConfig"
+></collab-comp-button>
+<br />
+<collab-comp-button
+  type="icon"
+  [iconButtonConfig]="iconButtonConfig"
+></collab-comp-button>
+
+<collab-toggle-switch
+  [label]="'Toggle switch'"
+  [labelPosition]="'left'"
+  [id]="'toggle1'"
+></collab-toggle-switch>
+<ascendion-play-carousel
+  [slides]="mainPageCarousel"
+  [transitionProperties]="test"
+></ascendion-play-carousel>

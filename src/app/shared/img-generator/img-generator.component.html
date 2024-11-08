@@ -1,0 +1,7 @@
+<img *ngIf="imageType === 'image'" [src]="imgUrl" [alt]="imageAltText" />
+<span
+  *ngIf="imageType === 'icon'"
+  class="{{ fontClassNames }}"
+  role="img"
+  attr.aria-label="{{ iconAltText }}"
+></span>
